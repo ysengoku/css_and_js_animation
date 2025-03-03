@@ -3,59 +3,75 @@
 	<head>
 		<title>Home</title>
 		<style>
+		body {
+         background-image: url("img/facade.png");
+		 background-repeat: no-repeat;
+		 background-size: cover;
+		 background-position: center;
+		 margin: 0;
+		 padding: 0;
+		}
 		.door-wrap {
 			position: relative;
-			width: 100vw;
+			width:  100vw;
 			height: 100vh;
 		  }
-		.door-back, .door-l, .door-r {
+		.door-frame {
 			position: absolute;
-			top: 50%;
+			top: 66%;
 			left: 50%;
 			width: auto;
-			height: 100%;
-			transform: translate(-50%, -50%);
+			height: 65%;
+			transform: translate(-50%, -49%);
+		  }
+		.door-l, .door-r {
+			position: absolute;
+			top: 68%;
+			width: auto;
+			height: 40%;
 		  }
 		.door-l {
+			left: 43%;
+			transform: translate(-50%, -45%);
 			z-index: 10;
-			transition: 3s;
+			transition: 2s;
 			transform-origin: left;
-			transform: translate(-50%, -50%);
 		  }
-
 		.door-r{
+			left: 57%;
+			transform: translate(-50%, -45%);
 			z-index: 10;
-			transition: 3s;
+			transition: 2s;
 			transform-origin: right;
-			transform: translate(-50%, -50%);
 		  }
 		</style>
 	</head>
 	<body>
 		<div class="door-wrap">
-			<img src="img/saloon-door-l.png" class="door-l">
-			<img src="img/saloon-door-r.png" class="door-r">
-			<img src="img/saloon-entrance.png" class="door-back">
+			<img src="img/door-l.png" class="door-l">
+			<img src="img/door-r.png" class="door-r">
+			<img src="img/door-frame.png" class="door-frame">
 		</div>
 
 		<script>
 			document.addEventListener('DOMContentLoaded', function() {
+				const door = document.querySelector('.door-wrap');
 				let doorL = document.querySelector('.door-l');
 				let doorR = document.querySelector('.door-r');
 
-				doorR.addEventListener('click', function() {
+				door.addEventListener('click', function() {
 					doorL.classList.toggle('open');
 					if(doorL.classList.contains('open')) {
-						doorL.style.transform = 'translate(-56%, -40%) rotateY(-65deg) skewY(10deg)';
+						doorL.style.transform = 'translate(-50%, -45%) rotateY(-65deg) skewY(-16deg)';
 					} else {
-						doorL.style.transform = 'translate(-50%, -50%) rotateY(0deg)';
+						doorL.style.transform = 'translate(-50%, -45%) rotateY(0deg)';
 					}
 
 					doorR.classList.toggle('open');
 					if(doorR.classList.contains('open')) {
-						doorR.style.transform = 'translate(-56%, -40%) rotateY(65deg) skewY(-10deg)';
+						doorR.style.transform = 'translate(-50%, -45%) rotateY(65deg) skewY(16deg)';
 					} else {
-						doorR.style.transform = 'translate(-50%, -50%) rotateY(0deg)';
+						doorR.style.transform = 'translate(-50%, -45%) rotateY(0deg)';
 					}
 				});
 			});
