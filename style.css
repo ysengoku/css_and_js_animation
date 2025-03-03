@@ -1,0 +1,46 @@
+body {
+	background-image: url("img/facade.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin: 0;
+	padding: 0;
+}
+
+.door-wrap {
+	position: relative;
+	width:  100vw;
+	height: 100vh;
+}
+
+.door-frame {
+	position: absolute;
+	top: 66%;
+	left: 50%;
+	width: auto;
+	height: 65%;
+	transform: translate(-50%, -49%);
+}
+
+.door-l, .door-r {
+	position: absolute;
+	top: 68%;
+	width: auto;
+	height: 40%;
+}
+
+.door-l {
+	left: 43%;
+	transform: translate(-50%, -45%);
+	z-index: 10;
+	transition: 2s;
+	transform-origin: left;
+}
+
+.door-r{
+	left: 57%;
+	transform: translate(-50%, -45%);
+	z-index: 10;
+	transition: 2s;
+	transform-origin: right;
+}
