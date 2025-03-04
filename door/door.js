@@ -7,7 +7,6 @@
 //         const windowWidth = window.innerWidth;
 //         const windowHeight = window.innerHeight;
 
-//         // ドアの位置とサイズをウィンドウのサイズに応じて調整
 //         const doorLLeft = 43 - (windowWidth - 768) * 0.01;
 //         const doorRLeft = 57 + (windowWidth - 768) * 0.01;
 //         const doorTop = 68 - (windowHeight - 800) * 0.01;
