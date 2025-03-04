@@ -1,21 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-	const door = document.querySelector('.door-wrap');
-	let doorL = document.querySelector('.door-l');
-	let doorR = document.querySelector('.door-r');
+	fetch('/header.html')
+	.then(response => response.text())
+	.then(html => {
+		document.getElementById('header-container').innerHTML = html;
 
-	door.addEventListener('click', () =>{
-		doorL.classList.toggle('open');
-		if(doorL.classList.contains('open')) {
-			doorL.style.transform = 'translate(-50%, -45%) rotateY(-65deg) skewY(-16deg)';
-		} else {
-			doorL.style.transform = 'translate(-50%, -45%) rotateY(0deg)';
-		}
+		const button = document.getElementById('button');
+		const menu = document.getElementById('menu');
 
-		doorR.classList.toggle('open');
-		if(doorR.classList.contains('open')) {
-			doorR.style.transform = 'translate(-50%, -45%) rotateY(65deg) skewY(16deg)';
-		} else {
-			doorR.style.transform = 'translate(-50%, -45%) rotateY(0deg)';
-		}
+		button.addEventListener('click', function() {
+			menu.classList.toggle('translate-x-full');
+		});
+	})
+	.catch(error => {
+		console.error('Error loading header:', error);
 	});
 });
